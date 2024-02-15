@@ -1,16 +1,21 @@
 \documentclass[UTF8,12pt]{article} % 12pt 为字号大小
 \usepackage{amssymb,amsfonts,amsmath,amsthm}
 \usepackage{times}
-\usepackage{graphicx} % 插图
-\usepackage{cite}
+% \usepackage{graphicx} % 插图
+% \usepackage{cite}
 \usepackage{xeCJK}
 \usepackage{placeins} % 防止浮动
+\usepackage{enumerate}
+\usepackage{lastpage}
+\usepackage{makecell}
+\usepackage{multirow}
 %----------
 % 插入代码的格式定义
 % 参考 https://www.latexstudio.net/archives/5900.html
 %----------
 \usepackage{listings}
 \lstset{
+ basicstyle=\scriptsize\ttfamily,
  columns=fixed,       
  numbers=left,                                        % 在左侧显示行号
  numberstyle=\tiny\color{gray},                       % 设定行号格式
@@ -107,6 +112,20 @@
 \usepackage[colorlinks,linkcolor=red]{hyperref}
 %表格
 \usepackage{tabularx}
+
+% -------
+% 图表标题
+% -------
+\usepackage{caption}
+\captionsetup[figure]{name=图}
+\captionsetup[table]{name=表}
+\captionsetup[listing]{name=代码}
+
+% ---------
+% 参考文献
+% ---------
+\usepackage[english]{babel}
+\addto\captionsenglish{\renewcommand{\refname}{参考文献}}
 
 %==========
 % 正文部分
@@ -317,6 +336,7 @@
 
 \FloatBarrier % 在不想被浮动的表格/图片 越过的部分前加 \FloatBarrier
 
+\clearpage
 \bibliography{refs}
 \bibliographystyle{plain}
 
