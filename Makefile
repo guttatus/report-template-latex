@@ -1,11 +1,14 @@
-all:
-	xelatex template.tex
+TEX_FILE := template
+OUTDIR := build
 
-ref:
-	xelatex template.tex
-	bibtex template.aux
-	xelatex template.tex
-	xelatex template.tex
+.PHONY: build
+
+build:
+	@if ! [ -d "${OUTDIR}" ]; then \
+		mkdir ${OUTDIR};  \
+	 fi
+
+	latexmk -pdf -xelatex -outdir=${OUTDIR} ${TEX_FILE}.tex
 
 clean:
-	rm *.log *.out *.aux
+	rm -rf ${OUTDIR}
