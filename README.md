@@ -5,7 +5,8 @@ latex中文模板，主要记录latex一些常用的简单操作，比较**适�
 <center>
     <img src="image/1.png" width="300"/><img src="image/2.png" width="300"/>
 </center>
-# Usage
+
+## Usage
 
 - For linux
 
